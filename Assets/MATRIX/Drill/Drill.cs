@@ -1,7 +1,7 @@
 using UnityEditor.Animations;
 using UnityEngine;
 
-public class drillOperator : MonoBehaviour
+public class Drill : MonoBehaviour
 {
     [SerializeField] Animator buttonAnimator;
     
