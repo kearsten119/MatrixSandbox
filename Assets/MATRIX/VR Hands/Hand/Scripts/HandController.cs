@@ -13,8 +13,8 @@ public class HandController : MonoBehaviour
 {
 
     //[SerializeField] XRInputValueReader<Vector2> m_XRI_StickInput;
-    [SerializeField] XRInputValueReader<float> m_XRI_ActivateInput;
-    [SerializeField] XRInputValueReader<float> m_XRI_SelectInput;
+    [SerializeField] XRInputValueReader<float> XRI_ActivateInput;     //trigger
+    [SerializeField] XRInputValueReader<float> XRI_SelectInput;       //gripper
 
     Animator animator;
     // Start is called before the first frame update
@@ -25,8 +25,12 @@ public class HandController : MonoBehaviour
 
     private void Update()
     {
-        animator.SetBool("activate", m_XRI_ActivateInput.ReadValue() > 0.5f);
-        animator.SetBool("select", m_XRI_SelectInput.ReadValue() > 0.5f);
+        float triggerValue = XRI_ActivateInput.ReadValue();
+        float gripperValue = XRI_SelectInput.ReadValue();
+
+        animator.SetLayerWeight(1, triggerValue);
+        animator.SetLayerWeight(2, gripperValue);
+
     }
 
     /// <summary>
