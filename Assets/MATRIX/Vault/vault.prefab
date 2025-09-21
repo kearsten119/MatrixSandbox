@@ -913,6 +913,7 @@ GameObject:
   - component: {fileID: 4159857787856782875}
   - component: {fileID: 6080449820618845293}
   - component: {fileID: 2234670357131694460}
+  - component: {fileID: -8964710011163028772}
   m_Layer: 0
   m_Name: vault
   m_TagString: Untagged
@@ -1078,6 +1079,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.50875103, y: 0.03727424, z: 0.5136366}
   m_Center: {x: -0.0021715164, y: 0.018797934, z: 0.0016719103}
+--- !u!114 &-8964710011163028772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4756912068412494171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3723f68401c0e4e973394634c2501a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VaultHandleSignMaterial: {fileID: 2100000, guid: 2e8357a42d15f354ea740726e0e2abdd, type: 2}
+  pull: {fileID: 2800000, guid: 0cc4fc88c4ee03f44be4650816edfa4c, type: 3}
+  turn: {fileID: 2800000, guid: be402852f57a13d49a6669685bb51154, type: 3}
+  noPull: {fileID: 2800000, guid: 4388ebcf9f3a8c14bb15b5cfe122d243, type: 3}
+  noTurn: {fileID: 2800000, guid: 4454e371a63e5af40bac48a2975ae526, type: 3}
+  blank: {fileID: 2800000, guid: 331e1abe951436a47b26f063bea5fcc9, type: 3}
 --- !u!1 &4964398415246714095
 GameObject:
   m_ObjectHideFlags: 0
