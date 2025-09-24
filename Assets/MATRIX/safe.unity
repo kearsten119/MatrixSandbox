@@ -1357,7 +1357,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1670256625, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 533555574}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 202364687, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1923792937}
   m_SourcePrefab: {fileID: 100100000, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
 --- !u!1 &963194225
 GameObject:
@@ -2674,6 +2677,32 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaeeb01de22714930b8ab235c7c2fc94, type: 3}
+--- !u!1 &1923792932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 202364687, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 921636201}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1923792937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923792932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149921e56c82646a7b5184c978674534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thumbstickPressAction:
+    m_Name: Thumbstick Press
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 28d53bb5-65bd-4840-b1c1-f356b3a6fb8b
+    m_Processors: 
+    m_Interactions: Press
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!4 &1953616284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3487114816167207552, guid: eaeeb01de22714930b8ab235c7c2fc94, type: 3}
@@ -2749,6 +2778,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8021806856045111204, guid: 41b6aee4145e1424e9cdf4aa4bb4fc0f, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5172830697439911754, guid: 41b6aee4145e1424e9cdf4aa4bb4fc0f, type: 3}
       propertyPath: m_Name
       value: drill
