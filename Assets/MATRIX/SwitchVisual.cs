@@ -6,11 +6,14 @@ public class SwitchVisual : MonoBehaviour
 {
     public InputAction thumbstickPressAction; // Assign this in the Inspector
     //[SerializeField] XRInputValueReader<bool> ScaleToggle;
+    [SerializeField] GameObject ControllerVisual;
+    [SerializeField] GameObject HandVisual;
 
     
     public void Start()
     {
-       
+        HandVisual.SetActive(false);
+        ControllerVisual.SetActive(true);
     }
 
     void OnEnable()
@@ -29,7 +32,9 @@ public class SwitchVisual : MonoBehaviour
 
     private void OnThumbstickPressStarted(InputAction.CallbackContext context)
     {
-        Debug.Log("Thumbstick Pressed!");
+        //Debug.Log("Thumbstick Pressed!");
+        ControllerVisual.SetActive(!ControllerVisual.activeSelf);
+        HandVisual.SetActive(!HandVisual.activeSelf);
     }
 
     private void OnThumbstickPressCanceled(InputAction.CallbackContext context)
