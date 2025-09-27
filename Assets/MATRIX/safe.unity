@@ -304,6 +304,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225596232}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &267870981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5262455800543999048, guid: e251dcb36d6d8d649944a80b6544f481, type: 3}
+  m_PrefabInstance: {fileID: 8294229233148769861}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &284455974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1328,10 @@ PrefabInstance:
     - target: {fileID: 1883230248363655243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_FarAttachMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883230248363655243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2449787133337329437, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_IsActive
@@ -3477,6 +3486,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2468654158158067030, guid: e251dcb36d6d8d649944a80b6544f481, type: 3}
       insertIndex: -1
       addedObject: {fileID: 446680199}
+    - targetCorrespondingSourceObject: {fileID: 5262455800543999048, guid: e251dcb36d6d8d649944a80b6544f481, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8294229233148769866}
     - targetCorrespondingSourceObject: {fileID: 6474920011824214577, guid: e251dcb36d6d8d649944a80b6544f481, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8294229233148769865}
@@ -3651,6 +3663,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8294229233148769866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267870981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d99c8b98d445f498c175584af8eefe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabInteractable: {fileID: 8294229233148769864}
+  controllerAxis:
+    m_InputSourceMode: 2
+    m_InputAction:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 42a35c0a-7525-4d8d-8b9a-5b466dce82bf
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_InputActionReference: {fileID: 5101698808175986029, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_ObjectReferenceObject: {fileID: 0}
+    m_ManualValue: {x: 0, y: 0, z: 0, w: 0}
+  x: {x: 0, y: 0, z: 0}
+  StartAngle: 0
+  Angle: 0
 --- !u!138 &8294229233148769868
 FixedJoint:
   m_ObjectHideFlags: 0
