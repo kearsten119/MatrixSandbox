@@ -20,13 +20,13 @@ public class SwitchVisual : MonoBehaviour
     {
         thumbstickPressAction.Enable();
         thumbstickPressAction.started += OnThumbstickPressStarted;
-        thumbstickPressAction.canceled += OnThumbstickPressCanceled;
+        //thumbstickPressAction.canceled += OnThumbstickPressCanceled;
     }
 
     void OnDisable()
     {
         thumbstickPressAction.started -= OnThumbstickPressStarted;
-        thumbstickPressAction.canceled -= OnThumbstickPressCanceled;
+        //thumbstickPressAction.canceled -= OnThumbstickPressCanceled;
         thumbstickPressAction.Disable();
     }
 
@@ -37,8 +37,10 @@ public class SwitchVisual : MonoBehaviour
         HandVisual.SetActive(!HandVisual.activeSelf);
     }
 
+    /*
     private void OnThumbstickPressCanceled(InputAction.CallbackContext context)
     {
         Debug.Log("Thumbstick Released!");
     }
+    */
 }
