@@ -8,12 +8,13 @@ public class SwitchVisual : MonoBehaviour
     //[SerializeField] XRInputValueReader<bool> ScaleToggle;
     [SerializeField] GameObject ControllerVisual;
     [SerializeField] GameObject HandVisual;
+    [SerializeField] bool ShowHands = false;
 
     
     public void Start()
     {
-        HandVisual.SetActive(false);
-        ControllerVisual.SetActive(true);
+        HandVisual.SetActive(ShowHands);
+        ControllerVisual.SetActive(!ShowHands);
     }
 
     void OnEnable()
@@ -33,8 +34,9 @@ public class SwitchVisual : MonoBehaviour
     private void OnThumbstickPressStarted(InputAction.CallbackContext context)
     {
         //Debug.Log("Thumbstick Pressed!");
-        ControllerVisual.SetActive(!ControllerVisual.activeSelf);
-        HandVisual.SetActive(!HandVisual.activeSelf);
+        ShowHands = !ShowHands;
+        HandVisual.SetActive(ShowHands);
+        ControllerVisual.SetActive(!ShowHands);
     }
 
     /*

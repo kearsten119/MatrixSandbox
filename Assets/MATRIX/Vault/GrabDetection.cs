@@ -12,10 +12,10 @@ public class GrabDetection : MonoBehaviour
 {
     [SerializeField] XRGrabInteractable grabInteractable;
     [SerializeField] XRInputValueReader<Quaternion> controllerAxis;  //Z-axis
-    public Vector3 CurrentAngle;
-    public Vector3 StartAngle;
-    public float RawAngle;
-    public float Angle;
+    float StartGrabAngle;
+    public float GrabAngle;
+
+    float StartHandleAngle;
 
     bool Grabbed = false;
 
@@ -28,25 +28,30 @@ public class GrabDetection : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        StartHandleAngle = transform.rotation.eulerAngles.z;
+    }
+
+
     private void Update()
     {
-        var q = controllerAxis.ReadValue();
-        CurrentAngle = q.eulerAngles;
-        //float z = x.z;
+        if (Grabbed)
+        {
+            float CurrentAngle = controllerAxis.ReadValue().eulerAngles.z;
+            GrabAngle = CurrentAngle - StartGrabAngle;
 
-        //while (z > 180) z -= 180;
-        //while (z < -180) z += 180;
-        //Angle = Quaternion.Angle(q, StartAngle);
-        //RawAngle = Angle;
+            if (GrabAngle > 180) GrabAngle -= 360;
 
-        RawAngle = CurrentAngle.z - StartAngle.z;
-        Angle = RawAngle;
+            var clampedAngle = Mathf.Clamp(StartHandleAngle + GrabAngle, StartHandleAngle - 90f, StartHandleAngle);
 
-        if (Angle > 180) Angle -= 360;
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, clampedAngle);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, StartHandleAngle);
+        }
 
-        //Angle = angle;
-        //Angle = q.eulerAngles. - StartAngle.eulerAngles.z;
-        //Quaternion.
     }
 
     void OnDisable()
@@ -64,7 +69,7 @@ public class GrabDetection : MonoBehaviour
         // Add your custom logic here for when the object is grabbed
 
         Grabbed = true;
-        StartAngle = controllerAxis.ReadValue().eulerAngles;
+        StartGrabAngle = controllerAxis.ReadValue().eulerAngles.z;
     }
 
     private void OnObjectReleased(SelectExitEventArgs args)
@@ -73,5 +78,6 @@ public class GrabDetection : MonoBehaviour
         // Add your custom logic here for when the object is released
 
         Grabbed = false;
+
     }
 }
