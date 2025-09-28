@@ -12,8 +12,9 @@ public class GrabDetection : MonoBehaviour
 {
     [SerializeField] XRGrabInteractable grabInteractable;
     [SerializeField] XRInputValueReader<Quaternion> controllerAxis;  //Z-axis
-    public Vector3 x;
-    public Quaternion StartAngle;
+    public Vector3 CurrentAngle;
+    public Vector3 StartAngle;
+    public float RawAngle;
     public float Angle;
 
     bool Grabbed = false;
@@ -30,15 +31,22 @@ public class GrabDetection : MonoBehaviour
     private void Update()
     {
         var q = controllerAxis.ReadValue();
+        CurrentAngle = q.eulerAngles;
         //float z = x.z;
 
         //while (z > 180) z -= 180;
         //while (z < -180) z += 180;
-        //var angle = Quaternion.Angle(q, StartAngle);
+        //Angle = Quaternion.Angle(q, StartAngle);
+        //RawAngle = Angle;
+
+        RawAngle = CurrentAngle.z - StartAngle.z;
+        Angle = RawAngle;
+
+        if (Angle > 180) Angle -= 360;
 
         //Angle = angle;
-        Angle = q.eulerAngles. - StartAngle.eulerAngles.z;
-        Quaternion.
+        //Angle = q.eulerAngles. - StartAngle.eulerAngles.z;
+        //Quaternion.
     }
 
     void OnDisable()
@@ -56,7 +64,7 @@ public class GrabDetection : MonoBehaviour
         // Add your custom logic here for when the object is grabbed
 
         Grabbed = true;
-        StartAngle = controllerAxis.ReadValue();
+        StartAngle = controllerAxis.ReadValue().eulerAngles;
     }
 
     private void OnObjectReleased(SelectExitEventArgs args)
