@@ -53,7 +53,7 @@ public class Drill : MonoBehaviour
         //From here, we will be able to read the activeInput and activeSelect values as necessary.
         interactor = args.interactorObject.transform.GetComponent<NearFarInteractor>();
 
-        //Debug.Log("Selected");
+        //Debug.Log("Selected by interactor " + interactor.name);
     }
 
     public void OnSelectExited(SelectExitEventArgs args)
