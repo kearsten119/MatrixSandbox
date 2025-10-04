@@ -49,6 +49,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 2347474511718948164, guid: 203e9b043100648a483b7396f2d13f3f, type: 3}
+      propertyPath: XRI_SelectInput.m_InputActionReference
+      value: 
+      objectReference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 2347474511718948164, guid: 203e9b043100648a483b7396f2d13f3f, type: 3}
+      propertyPath: XRI_ActivateInput.m_InputActionReference
+      value: 
+      objectReference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 2347474511718948164, guid: 203e9b043100648a483b7396f2d13f3f, type: 3}
       propertyPath: m_XRI_SelectInput.m_InputActionReference
       value: 
       objectReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
