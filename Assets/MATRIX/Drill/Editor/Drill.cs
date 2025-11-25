@@ -1,4 +1,7 @@
+#if UNITY_EDITOR
 using UnityEditor.Animations;
+using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
@@ -46,6 +49,15 @@ public class Drill : MonoBehaviour
         buttonAnimator.SetLayerWeight(1, drillSpeed);
         bitAnimator.speed = drillSpeed;
     }
+
+#if UNITY_EDITOR
+    // Editor-only helpers, menu items, baking code, etc.
+    [ContextMenu("Bake Animator Controller")]
+    void BakeController()
+    {
+        // uses AnimatorController, AssetDatabase, etc.
+    }
+#endif
 
     public void OnSelectEntered(SelectEnterEventArgs args)
     {
